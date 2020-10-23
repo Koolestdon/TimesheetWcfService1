@@ -23,6 +23,13 @@ namespace TimesheetWcfService1
 
             return timesheetDAO.Create(timesheet);
         }
+        public string UpdateTimesheet(int id, string title, string description, string category, string date, int hours, string status)
+        {
+            Timesheet timesheet = new Timesheet(title, description, category, date, hours, status);
+            timesheet.ID = id;
+
+            return timesheetDAO.Update(timesheet);
+        }
         public string VerifyList(string listName)
         {
             if(timesheetDAO.ListExist(listName))
@@ -34,8 +41,6 @@ namespace TimesheetWcfService1
                 return "List is not available on the site";
             }
         }
-
-
         public CompositeType GetDataUsingDataContract(CompositeType composite)
         {
             if (composite == null)
