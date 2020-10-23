@@ -30,7 +30,7 @@ namespace TimesheetWcfService1
         {
             try
             {
-                using (var clientContext = GetClientContext())
+                using ( clientContext = GetClientContext())
                 {
 
                     List list = clientContext.Site.RootWeb.GetListByTitle(TIMESHEET_LIST_NAME);
