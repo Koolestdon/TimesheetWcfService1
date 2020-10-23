@@ -86,7 +86,7 @@ namespace TimesheetWcfService1
         {
             try
             {
-                using (var clientContext = GetClientContext())
+                using (clientContext = GetClientContext())
                 {
 
                     List list = clientContext.Site.RootWeb.GetListByTitle(TIMESHEET_LIST_NAME);
@@ -144,7 +144,7 @@ namespace TimesheetWcfService1
             try
             {
                 double daysHoursTotal = 0;
-                using (var clientContext = GetClientContext())
+                using (clientContext = GetClientContext())
                 {
 
                     List list = clientContext.Site.RootWeb.GetListByTitle(TIMESHEET_LIST_NAME);
